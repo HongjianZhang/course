@@ -137,9 +137,9 @@ Then, implement the iterators for `PNLJOperator`, `BNLJOperator`, `GraceHashOper
 before getting down and dirty with the code. Think carefully about what instance variables you need before you begin!
 
 For `SortMergeOperator`, you may want to consider implementing a helper function that sorts
-a single relation (though not required).
+a single relation (though not required). You should not be materializing the sorted records, but instead store them within temporary tables for the merge phase. We will be checking the number of temporary tables in the transaction.
 
-For `GraceHashOperator`, always use the left table to build the hash table. 
+For `GraceHashOperator`, always use the left table to build the hash table.
 
 #### 1.2 Index Scan Operator
 
